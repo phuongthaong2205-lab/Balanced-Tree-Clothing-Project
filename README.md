@@ -136,12 +136,14 @@ WITH transaction_revenue AS(
 ```sql
 SELECT 
   prod_id,
-  SUM(qty*price) AS Total_Generated_Revenue
+  SUM(QTY*PRICE) AS Total_Generated_Revenue
 FROM balanced_tree.sales
-ORDER BY Total_Generated_Revenue DESC
 GROUP BY prod_id
+ORDER BY Total_Generated_Revenue DESC
 LIMIT 3
 ```
+<img width="927" height="201" alt="image" src="https://github.com/user-attachments/assets/4a8f312f-0eb0-47ed-8fad-9a4f0c359b13" />
+
 **Q2. What is the total quantity, revenue and discount for each segment?**
 ```sql
 SELECT
@@ -149,10 +151,12 @@ SELECT
  SUM(s.QTY) AS Total_Quantity,
  SUM(QTY*s.PRICE) AS Total_Generated_Revenue,
  SUM(QTY*s.PRICE*DISCOUNT/100) AS Total_Discount
-FROM balanced_tree.sales
-JOIN balanced_tree.product_details ON p.product_id = s.prod_id
+FROM balanced_tree.sales AS s
+JOIN balanced_tree.product_details AS p ON p.product_id = s.prod_id
 GROUP BY segment_name
 ```
+<img width="922" height="246" alt="image" src="https://github.com/user-attachments/assets/0af8d092-1c9d-4e73-87ab-02b78f20b6f5" />
+
 **Q3. What is the top selling product for each segment?**
 ```sql
 WITH ranked_prod AS(
@@ -173,6 +177,8 @@ SELECT
 FROM ranked_prod
 WHERE rank_number = 1
 ```
+<img width="928" height="248" alt="image" src="https://github.com/user-attachments/assets/77221264-e3cd-49e9-9fed-59d3a27cf7b7" />
+
 **Q4. What is the total quantity, revenue and discount for each category?**
 ```sql
 SELECT
@@ -184,6 +190,8 @@ FROM balanced_tree.sales AS s
 JOIN balanced_tree.product_details AS p ON p.product_id = s.prod_id
 GROUP BY category_id
 ```
+<img width="926" height="148" alt="image" src="https://github.com/user-attachments/assets/a1e699b0-52f4-4db6-88c3-2dc70a345081" />
+
 **Q5. What is the top selling product for each category?**
 ```sql
 WITH ranked_prod AS(
@@ -204,6 +212,8 @@ SELECT
 FROM ranked_prod
 WHERE rank_number = 1
 ```
+<img width="925" height="154" alt="image" src="https://github.com/user-attachments/assets/24cbaeef-8d54-4dc1-8747-b2c3a5e99f18" />
+
 **Q6. What is the percentage split of revenue by product for each segment?**
 ```sql
 WITH product_revenue AS(
@@ -222,6 +232,8 @@ SELECT
 FROM product_revenue
 ORDER BY revenue_percentage, segment_name DESC 
 ```
+<img width="1180" height="593" alt="image" src="https://github.com/user-attachments/assets/ccb3f497-e414-4ac7-b312-d27e5199ccfe" />
+
 **Q7. What is the percentage split of revenue by segment for each category?**
 ```sql
 WITH segment_revenue AS(
@@ -240,6 +252,8 @@ SELECT
 FROM segment_revenue
 ORDER BY category_name,revenue_percentage DESC
 ```
+<img width="924" height="245" alt="image" src="https://github.com/user-attachments/assets/ed2986be-249e-4949-a228-ee3400586781" />
+
 **Q8. What is the percentage split of total revenue by category?**
 ```sql
 WITH category_revenue AS(
@@ -256,6 +270,8 @@ SELECT
 FROM category_revenue
 ORDER BY revenue_percentage, category_name DESC
 ```
+<img width="926" height="156" alt="image" src="https://github.com/user-attachments/assets/46ea35ea-3fdb-41a8-b917-4b91725839af" />
+
 **Q9. What is the total transaction “penetration” for each product? (hint: penetration = number of transactions where at least 1 quantity of a product was purchased divided by total number of transactions)**
 ```sql
 SELECT 
@@ -267,6 +283,8 @@ JOIN balanced_tree.product_details AS p ON s.prod_id = p.product_id
 GROUP BY p.product_name
 ORDER BY penetration_percentage DESC
 ```
+<img width="1638" height="883" alt="IMG_1758" src="https://github.com/user-attachments/assets/4991f538-640f-4f3f-9810-b92138bb4ca0" />
+
 **Q10. What is the most common combination of at least 1 quantity of any 3 products in a 1 single transaction?**
 ```sql
 WITH txn_products AS (
@@ -293,6 +311,8 @@ GROUP BY
 ORDER BY times_bought_together DESC
 LIMIT 1
 ```
+<img width="926" height="107" alt="image" src="https://github.com/user-attachments/assets/87c0fa63-1190-4589-b628-e126e6de5772" />
+
 
 
 
