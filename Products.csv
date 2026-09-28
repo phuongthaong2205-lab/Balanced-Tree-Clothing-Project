@@ -1,0 +1,61 @@
+ProductID,ProductName,CategoryName,SupplierID,UnitPrice,CostPrice,ActiveFlag,LaunchDate
+P001,iPhone 15,Electronics,SUP001,"25,000,000","19,000,000",Yes,2024-05-17
+P002,Samsung S24,Electronics,SUP002,"22,000,000","17,000,000",Yes,2023-01-29
+P003,Xiaomi Pad 6,Electronics,SUP003,"9,500,000","7,200,000",Yes,2023-12-18
+P004,Sony Headphone,Electronics,SUP004,"4,200,000","3,000,000",Yes,2023-02-19
+P005,Canon Printer,Electronics,SUP005,"5,200,000","3,900,000",Yes,2024-03-15
+P006,Dell Latitude,Laptop,SUP006,"28,000,000","21,500,000",Yes,2023-12-07
+P007,HP Probook,Laptop,SUP007,"19,000,000","14,500,000",Yes,2024-07-05
+P008,Lenovo ThinkPad,Laptop,SUP008,"26,000,000","19,800,000",Yes,2023-06-10
+P009,Asus Zenbook,Laptop,SUP001,"24,000,000","18,000,000",No,2024-06-01
+P010,MacBook Air,Laptop,SUP002,"32,000,000","25,000,000",Yes,2024-03-22
+P011,Wireless Mouse,Accessories,SUP003,"300,000","170,000",Yes,2023-08-22
+P012,Mechanical Keyboard,Accessories,SUP004,"1,200,000","760,000",Yes,2023-01-17
+P013,USB-C Hub,Accessories,SUP005,"850,000","510,000",Yes,2023-05-12
+P014,HDMI Cable,Accessories,SUP006,"180,000","90,000",Yes,2023-01-05
+P015,Laptop Stand,Accessories,SUP007,"450,000","230,000",Yes,2023-09-06
+P016,Office Chair,Office,SUP008,"3,500,000","2,200,000",Yes,2024-04-29
+P017,Monitor LG 27,Office,SUP001,"4,500,000","3,100,000",Yes,2024-04-30
+P018,Standing Desk,Office,SUP002,"6,200,000","4,200,000",Yes,2024-07-14
+P019,Desk Lamp,Office,SUP003,"650,000","360,000",Yes,2024-07-10
+P020,Document Scanner,Office,SUP004,"7,600,000","5,500,000",Yes,2023-08-31
+P021,Air Fryer,Home Appliances,SUP005,"2,100,000","1,450,000",Yes,2023-05-13
+P022,Vacuum Cleaner,Home Appliances,SUP006,"3,800,000","2,500,000",Yes,2023-11-22
+P023,Water Purifier,Home Appliances,SUP007,"5,400,000","3,900,000",Yes,2024-08-14
+P024,Coffee Machine,Home Appliances,SUP008,"4,700,000","3,300,000",Yes,2023-12-01
+P025,Microwave Oven,Home Appliances,SUP001,"2,600,000","1,800,000",Yes,2024-01-10
+P026,Microsoft 365,Software,SUP002,"2,400,000","1,500,000",Yes,2024-11-20
+P027,Antivirus Pro,Software,SUP003,"900,000","420,000",Yes,2023-12-20
+P028,Accounting Software,Software,SUP004,"5,600,000","2,800,000",Yes,2023-11-17
+P029,CRM Starter,Software,SUP005,"7,800,000","3,900,000",Yes,2024-09-04
+P030,BI Training Package,Services,SUP006,"12,000,000","5,600,000",Yes,2023-12-03
+P031,WiFi Router AX,Networking,SUP007,"1,800,000","1,050,000",Yes,2024-09-30
+P032,Switch 24 Port,Networking,SUP008,"4,200,000","2,600,000",Yes,2024-09-24
+P033,Network Cable Box,Networking,SUP001,"1,450,000","900,000",Yes,2023-09-12
+P034,Firewall Appliance,Networking,SUP002,"18,500,000","12,500,000",Yes,2023-10-14
+P035,Cloud Setup Service,Services,SUP003,"9,000,000","3,600,000",Yes,2024-10-01
+P036,Warranty Extension,Services,SUP004,"1,600,000","500,000",No,2024-02-19
+P037,iPhone 15 v1,Electronics,SUP005,"25,000,000","19,000,000",No,2023-09-26
+P038,Samsung S24 v1,Electronics,SUP006,"22,000,000","17,000,000",Yes,2023-09-16
+P039,Xiaomi Pad 6 v1,Electronics,SUP007,"9,500,000","7,200,000",Yes,2023-04-14
+P040,Sony Headphone v1,Electronics,SUP008,"4,200,000","3,000,000",Yes,2023-08-05
+P041,Canon Printer v1,Electronics,SUP001,"5,200,000","3,900,000",Yes,2023-06-13
+P042,Dell Latitude v1,Laptop,SUP002,"28,000,000","21,500,000",Yes,2023-03-04
+P043,HP Probook v1,Laptop,SUP003,"19,000,000","14,500,000",Yes,2024-11-22
+P044,Lenovo ThinkPad v1,Laptop,SUP004,"26,000,000","19,800,000",Yes,2023-02-15
+P045,Asus Zenbook v1,Laptop,SUP005,"24,000,000","18,000,000",Yes,2023-10-05
+P046,MacBook Air v1,Laptop,SUP006,"32,000,000","25,000,000",No,2024-09-14
+P047,Wireless Mouse v1,Accessories,SUP007,"300,000","170,000",Yes,2023-10-25
+P048,Mechanical Keyboard v1,Accessories,SUP008,"1,200,000","760,000",Yes,2023-08-12
+P049,USB-C Hub v1,Accessories,SUP001,"850,000","510,000",Yes,2024-11-28
+P050,HDMI Cable v1,Accessories,SUP002,"180,000","90,000",No,2024-11-14
+P051,Laptop Stand v1,Accessories,SUP003,"450,000","230,000",Yes,2024-03-13
+P052,Office Chair v1,Office,SUP004,"3,500,000","2,200,000",Yes,2023-08-24
+P053,Monitor LG 27 v1,Office,SUP005,"4,500,000","3,100,000",Yes,2023-04-16
+P054,Standing Desk v1,Office,SUP006,"6,200,000","4,200,000",Yes,2023-03-31
+P055,Desk Lamp v1,Office,SUP007,"650,000","360,000",Yes,2024-06-05
+P056,Document Scanner v1,Office,SUP008,"7,600,000","5,500,000",Yes,2023-10-23
+P057,Air Fryer v1,Home Appliances,SUP001,"2,100,000","1,450,000",Yes,2024-10-12
+P058,Vacuum Cleaner v1,Home Appliances,SUP002,"3,800,000","2,500,000",Yes,2023-04-06
+P059,Water Purifier v1,Home Appliances,SUP003,"5,400,000","3,900,000",Yes,2024-05-01
+P060,Coffee Machine v1,Home Appliances,SUP004,"4,700,000","3,300,000",Yes,2023-08-15
