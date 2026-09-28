@@ -93,7 +93,7 @@ WITH transaction_discount AS(
   FROM balanced_tree.sales
   GROUP BY txn_id
 )
-SELECT ROUND(AVG(Total_Discount), 2) AS Avg_Discount_Per_Transaction
+SELECT (AVG(Total_Discount) 
 FROM transaction_discount
 ```
 <img width="918" height="86" alt="image" src="https://github.com/user-attachments/assets/697f0601-746f-4588-8036-1a647d41bb2b" />
