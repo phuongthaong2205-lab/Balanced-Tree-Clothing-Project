@@ -12,7 +12,7 @@ Balanced Tree Clothing Co. needs to optimize its merchandising strategy and unde
 - SQL Techniques: CTEs, Subqueries, Window Functions, Self-Joins
 
 ## Database Schema
-[Insert ERD image here]
+[![Database Schema](balanced_tree_erd.png)]
 Note: Streamlined the original 4-table schema into a Fact-Dimension model for efficient Power BI integration.
 
 ## Analysis & SQL Queries
