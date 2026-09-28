@@ -8,7 +8,7 @@ Balanced Tree Clothing Co. needs to optimize its merchandising strategy and unde
 
 ## Tools & Techniques
 - Database: PostgreSQL
-- Visualization: Power BI [Insert link to dashboard if available]
+- Visualization: Power BI [https://app.powerbi.com/groups/me/reports/0e4b1ed8-9f42-46a7-be58-0724ab341406?ctid=ed8f1673-3890-4db4-a3f0-97ad9427c74f&pbi_source=linkShare&bookmarkGuid=108e86af-79bc-43a9-a255-277086e204c8]
 - SQL Techniques: CTEs, Subqueries, Window Functions, Self-Joins
 
 ## Database Schema
