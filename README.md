@@ -1,6 +1,7 @@
 # Balanced-Tree-Clothing-Project
 ## Overview
-Balanced Tree Clothing Co. needs to optimize its merchandising strategy and understand customer purchasing patterns. This project analyzes over 15,000 sales transactions to uncover actionable insights regarding revenue generation, product performance, and customer loyalty.
+Dataset: 8 Week SQL Challenge – Case Study #7 (Balanced Tree Clothing Co.
+Balanced Tree Clothing Co. needs to optimize its merchandising strategy and understand customer purchasing patterns. This project analyzes 15,095 sales line items across 2,500 unique transactions to uncover actionable insights regarding revenue generation, product performance, and customer loyalty.
 
 **Key outcomes:**
 - Processed and modeled structured transaction data using PostgreSQL.
@@ -8,6 +9,7 @@ Balanced Tree Clothing Co. needs to optimize its merchandising strategy and unde
 
 ## Tools & Techniques
 - Database: PostgreSQL
+- DAX, Power Query
 - Visualization: Power BI - [Power BI Dashboard File](Balanced_Tree.pbix) 
 - SQL Techniques: CTEs, Subqueries, Window Functions, Self-Joins
 
@@ -28,7 +30,7 @@ FROM balanced_tree.sales;
 
 **Q2. What is the total generated revenue for all products before discounts?**
 ```sql
-SELECT SUM(QTY*PRICE) AS Total_Gernerated_Revenue
+SELECT SUM(QTY*PRICE) AS Total_Generated_Revenue
 FROM balanced_tree.sales
 ```
 <img width="926" height="113" alt="image" src="https://github.com/user-attachments/assets/e58c051b-35ea-4fbf-ab16-975243a8a5c9" />
@@ -91,7 +93,7 @@ WITH transaction_discount AS(
   FROM balanced_tree.sales
   GROUP BY txn_id
 )
-SELECT AVG(Total_Discount)
+SELECT ROUND(AVG(Total_Discount), 2) AS Avg_Discount_Per_Transaction
 FROM transaction_discount
 ```
 <img width="918" height="86" alt="image" src="https://github.com/user-attachments/assets/697f0601-746f-4588-8036-1a647d41bb2b" />
@@ -313,7 +315,44 @@ LIMIT 1
 ```
 <img width="926" height="107" alt="image" src="https://github.com/user-attachments/assets/87c0fa63-1190-4589-b628-e126e6de5772" />
 
+## Key Findings & Recommendations
 
+> **Scope:** 2,500 transactions (15,095 line items) across 12 products, Jan 1 – Mar 30, 2021. All figures are calculated from `sales.csv`. Revenue is shown before discounts unless stated otherwise.
+
+### Key Findings
+
+**1. Revenue and discounts**
+- Gross revenue: **$1,289,453** (45,216 units sold). Discounts: **$156,229** (12.1% of gross), leaving net revenue of about **$1,133,224**.
+- Average basket: **$515.78** (median $509.50; 25th–75th percentile $375.75–$647.00) with **6.04** unique products per transaction.
+
+**2. Members vs. non-members**
+
+| Group | Transactions | Share of transactions | Share of revenue | Avg. revenue per transaction | Avg. discount per transaction |
+|---|---|---|---|---|---|
+| Member | 1,505 | 60.2% | 60.3% | $516.27 | $62.13 |
+| Non-member | 995 | 39.8% | 39.7% | $515.04 | $63.04 |
+
+Members generate the majority of transactions, but their baskets are virtually the same size as non-members' and they receive the same average discount. Membership drives **reach and frequency, not larger baskets**.
+
+**3. Product and category mix**
+- Men's items generate **55.4%** of revenue ($714,120), women's items **44.6%** ($575,333).
+- Two segments, **Men's Shirts (31.5%)** and **Women's Jackets (28.5%)**, account for **60%** of revenue. Women's Jeans are the smallest segment (16.2%).
+- The top 3 products by revenue are Blue Polo Shirt – Mens ($217,683), Grey Fashion Jacket – Womens ($209,304) and White Tee Shirt – Mens ($152,000). Together they make up **44.9%** of revenue.
+- Units sold per product are close (3,646–3,876) and every product appears in about half of all transactions (49.7%–51.2% penetration). The revenue ranking is therefore driven mainly by **price, not popularity**.
+
+**4. Product combinations**
+- The most frequent 3-product basket is **White Tee Shirt – Mens + Grey Fashion Jacket – Womens + Teal Button Up Shirt – Mens**, found in **352 transactions (14.08%)**.
+- The margin is thin. The next two combinations appear in 13.96% and 13.88% of transactions, and the data contains 220 distinct 3-product combinations. Given each product's ~50% penetration, independent purchasing would already produce this triple in about 12.9% of transactions, so the lift is only **~1.1x**. This is a weak signal, not a strong affinity.
+
+### Recommendations
+
+1. **Test the top combination as a bundle before rolling it out.** Run an A/B test (bundle offer vs. no offer) and compare basket value and conversion. Because the combination mixes men's and women's items and its lift is small, also test bundles within one category, for example a men's shirt with men's socks.
+2. **Use membership to increase purchase frequency rather than discount depth.** Members already make up 60% of transactions but spend no more per basket, and discounts are applied almost equally to both groups. Add a sign-up incentive at checkout to convert the 39.8% non-member share, and reward repeat purchases (points, early access) instead of raising discounts.
+3. **Focus campaigns on the high-revenue, price-driven products.** Feature Blue Polo Shirt, Grey Fashion Jacket and the Men's Shirt segment in promotions and homepage placement, and test pairing Women's Jeans (lowest revenue share) with Women's Jackets to lift their contribution.
+
+### Limitations
+- The data covers only three months, so seasonality cannot be assessed.
+- There is no cost or margin data. "Top" and "best-selling" refer to revenue and volume, not profitability.
 
 
 
