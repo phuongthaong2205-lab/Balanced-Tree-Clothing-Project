@@ -328,8 +328,8 @@ JOIN balanced_tree.product_details AS p ON s.prod_id = p.product_id
 GROUP BY p.product_name
 ORDER BY penetration_percentage DESC
 ```
-<img width="1683" height="810" alt="Bildschirmfoto 2026-09-29 um 20 47 27 (2)" src="https://github.com/user-attachments/assets/ebaf3fa5-03a3-4e03-91a0-1451382e9f7f" />
-<img width="1694" height="818" alt="Bildschirmfoto 2026-09-29 um 20 47 31 (2)" src="https://github.com/user-attachments/assets/ee91c3a2-4be6-4a28-909b-7e9a015c2f69" />
+<img width="1669" height="382" alt="Bildschirmfoto 2026-09-29 um 20 47 27 (2)" src="https://github.com/user-attachments/assets/0f59c5e8-e02d-4708-8b80-ecd3192ea844" />
+<img width="1685" height="402" alt="Bildschirmfoto 2026-09-29 um 20 47 31 (2)" src="https://github.com/user-attachments/assets/9244eb82-6926-42fb-8618-23a4e790a315" />
 
 **Q10. What is the most common combination of at least 1 quantity of any 3 products in a 1 single transaction?**
 ```sql
