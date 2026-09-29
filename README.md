@@ -11,7 +11,7 @@ Balanced Tree Clothing Co. needs to optimize its merchandising strategy and unde
 Interactive 3-page Power BI report built on the Fact–Dimension model, with a month slicer on every page. It answers three questions: how the business performs overall, how members differ from non-members, and which products drive revenue.
 
 ### Executive Overview
-![Executive Overview: KPI cards, Q1 daily sales trend, discount share and latest transactions](excutive_overview.png)
+![Executive Overview: KPI cards, Q1 daily sales trend, discount share and latest transactions](overview.png)
 
 ### Sales
 ![Sales dashboard: transaction tiers, member vs. non-member split, weekday volume and discount effectiveness](sales.png)
