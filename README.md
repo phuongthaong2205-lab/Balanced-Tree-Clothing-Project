@@ -322,13 +322,14 @@ ORDER BY revenue_percentage, category_name DESC
 SELECT 
   p.product_name,
   ROUND(
-    COUNT(DISTINCT(s.txn_id) * 100.0 /(SELECT COUNT(DISTINCT txn_id)FROM balanced_tree.sales), 2) AS penetration_percentage
+    COUNT(DISTINCT s.txn_id) * 100.0 /(SELECT COUNT(DISTINCT txn_id)FROM balanced_tree.sales), 2) AS penetration_percentage
 FROM balanced_tree.sales AS s
 JOIN balanced_tree.product_details AS p ON s.prod_id = p.product_id
 GROUP BY p.product_name
 ORDER BY penetration_percentage DESC
 ```
-<img width="1638" height="883" alt="IMG_1758" src="https://github.com/user-attachments/assets/4991f538-640f-4f3f-9810-b92138bb4ca0" />
+<img width="1683" height="810" alt="Bildschirmfoto 2026-09-29 um 20 47 27 (2)" src="https://github.com/user-attachments/assets/ebaf3fa5-03a3-4e03-91a0-1451382e9f7f" />
+<img width="1694" height="818" alt="Bildschirmfoto 2026-09-29 um 20 47 31 (2)" src="https://github.com/user-attachments/assets/ee91c3a2-4be6-4a28-909b-7e9a015c2f69" />
 
 **Q10. What is the most common combination of at least 1 quantity of any 3 products in a 1 single transaction?**
 ```sql
