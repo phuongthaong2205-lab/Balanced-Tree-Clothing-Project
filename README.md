@@ -6,6 +6,26 @@ Balanced Tree Clothing Co. needs to optimize its merchandising strategy and unde
 - Processed and modeled structured transaction data using PostgreSQL.
 - Identified the most profitable product segments and frequent 3-item baskets to drive cross-selling campaigns.
 
+## Dashboard Preview
+
+Interactive 3-page Power BI report built on the Fact–Dimension model, with a month slicer on every page. It answers three questions: how the business performs overall, how members differ from non-members, and which products drive revenue.
+
+### Executive Overview
+![Executive Overview: KPI cards, Q1 daily sales trend, discount share and latest transactions](excutive_overview.png)
+
+### Sales
+![Sales dashboard: transaction tiers, member vs. non-member split, weekday volume and discount effectiveness](sales.png)
+
+### Products
+![Products dashboard: sales by category and segment, revenue vs. volume, top-5 concentration and most frequent 3-item basket](products.png)
+
+**What the dashboard shows**
+- **Members vs. non-members:** members make up 60.2% of transactions, but their average order value is almost identical ($516.27 vs. $515.04).
+- **Discounts:** transaction counts and average units per order stay flat across discount levels of 0–20%, so deeper discounts do not appear to lift basket size.
+- **Revenue concentration:** the top 5 products generate about 65% of revenue.
+
+[Download the .pbix file](link-cua-ban) (requires Power BI Desktop on Windows)
+
 ## Data Source & Credit
 Dataset and business questions are from **Case Study #7 – Balanced Tree Clothing Co.**, 
 part of [Danny Ma's 8 Week SQL Challenge](https://8weeksqlchallenge.com/). 
