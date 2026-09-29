@@ -4,7 +4,7 @@ Balanced Tree Clothing Co. needs to optimize its merchandising strategy and unde
 
 **Key outcomes:**
 - Processed and modeled structured transaction data using PostgreSQL.
-- Identified the most profitable product segments and frequent 3-item baskets to drive cross-selling campaigns.
+- Identified the highest-revenue product segments and frequent 3-item baskets to drive cross-selling campaigns.
 
 ## Dashboard Preview
 
