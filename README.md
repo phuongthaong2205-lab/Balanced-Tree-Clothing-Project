@@ -7,6 +7,11 @@ Balanced Tree Clothing Co. needs to optimize its merchandising strategy and unde
 - Processed and modeled structured transaction data using PostgreSQL.
 - Identified the most profitable product segments and frequent 3-item baskets to drive cross-selling campaigns.
 
+## Data Source & Credit
+Dataset and business questions are from **Case Study #7 – Balanced Tree Clothing Co.**, 
+part of [Danny Ma's 8 Week SQL Challenge](https://8weeksqlchallenge.com/). 
+All SQL queries, the PostgreSQL data model, Power BI dashboard, and insights below are my own work.
+
 ## Tools & Techniques
 - Database: PostgreSQL
 - DAX, Power Query
