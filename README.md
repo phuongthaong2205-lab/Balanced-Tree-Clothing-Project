@@ -21,7 +21,7 @@ Interactive 3-page Power BI report built on the Fact–Dimension model, with a m
 
 **What the dashboard shows**
 - **Members vs. non-members:** members make up 60.2% of transactions, but their average order value is almost identical ($516.27 vs. $515.04).
-- **Discounts:** transaction counts and average units per order stay flat across discount levels of 0–20%, so deeper discounts do not appear to lift basket size.
+- **Discounts:** transaction counts and average units per order stay flat across discount levels of 0–24%, so deeper discounts do not appear to lift basket size.
 - **Revenue concentration:** the top 5 products generate about 65% of revenue.
 
 [Download the .pbix file](link-cua-ban) (requires Power BI Desktop on Windows)
