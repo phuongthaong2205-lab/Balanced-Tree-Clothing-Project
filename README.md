@@ -1,14 +1,16 @@
 # Balanced-Tree-Clothing-Project
 ## Overview
-Balanced Tree Clothing Co. needs to optimize its merchandising strategy and understand customer purchasing patterns. This project analyzes 15,095 sales line items across 2,500 unique transactions to uncover actionable insights regarding revenue generation, product performance, and customer loyalty.
+Balanced Tree Clothing Co. wants to optimize its merchandising strategy and understand how customers buy. This project analyzes 15,095 sales line items across 2,500 transactions (12 products, Jan 1 – Mar 30, 2021) to answer three questions: how the business performs overall, how members differ from non-members, and which products drive revenue.
 
 **Key outcomes:**
-- Processed and modeled structured transaction data using PostgreSQL.
-- Identified the highest-revenue product segments and frequent 3-item baskets to drive cross-selling campaigns.
+- Modeled and queried the transaction data in PostgreSQL, then built a 3-page Power BI report on a Fact–Dimension model.
+- Gross revenue of $1.29M, with discounts taking 12.1%. The top 5 products generate ~65% of revenue.
+- Members make up 60.2% of transactions, yet their average order value is almost identical to non-members' ($516.27 vs. $515.04).
+- The most frequent 3-item basket appears in 14.08% of transactions, but the lift is only ~1.1x, so it is a weak cross-selling signal that needs testing before rollout.
 
 ## Dashboard Preview
 
-Interactive 3-page Power BI report built on the Fact–Dimension model, with a month slicer on every page. It answers three questions: how the business performs overall, how members differ from non-members, and which products drive revenue.
+Interactive 3-page Power BI report with a month slicer on every page.
 
 ### Executive Overview
 ![Executive Overview: KPI cards, Q1 daily sales trend, discount share and latest transactions](overview.png)
@@ -34,7 +36,7 @@ All SQL queries, the PostgreSQL data model, Power BI dashboard, and insights bel
 - DAX, Power Query
 - Visualization: Power BI - [Power BI Dashboard File](Balanced_Tree.pbix) 
 - SQL Techniques: CTEs, Subqueries, Window Functions, Self-Joins
-
+  *SQL queries: see Analysis & SQL Queries below*
 ## Database Schema
 ![Database Schema](balanced_tree_erd.png)
 Note: Streamlined the original 4-table schema into a Fact-Dimension model for efficient Power BI integration.
@@ -56,7 +58,7 @@ Note: Streamlined the original 4-table schema into a Fact-Dimension model for ef
 | Member | 1,505 | 60.2% | 60.3% | $516.27 | $62.13 |
 | Non-member | 995 | 39.8% | 39.7% | $515.04 | $63.04 |
 
-Members generate the majority of transactions, but their baskets are virtually the same size as non-members' and they receive the same average discount. Membership drives **reach and frequency, not larger baskets**.
+Members generate the majority of transactions, but their baskets are virtually the same size as non-members' and they receive the same average discount. Membership therefore does not lift basket value. The dataset has no customer ID, so whether members buy more often cannot be tested here.
 
 **3. Product and category mix**
 - Men's items generate **55.4%** of revenue ($714,120), women's items **44.6%** ($575,333).
@@ -69,17 +71,20 @@ Members generate the majority of transactions, but their baskets are virtually t
 - The margin is thin. The next two combinations appear in 13.96% and 13.88% of transactions, and the data contains 220 distinct 3-product combinations. Given each product's ~50% penetration, independent purchasing would already produce this triple in about 12.9% of transactions, so the lift is only **~1.1x**. This is a weak signal, not a strong affinity.
 
 ### Recommendations
-
 1. **Test the top combination as a bundle before rolling it out.** Run an A/B test (bundle offer vs. no offer) and compare basket value and conversion. Because the combination mixes men's and women's items and its lift is small, also test bundles within one category, for example a men's shirt with men's socks.
-2. **Use membership to increase purchase frequency rather than discount depth.** Members already make up 60% of transactions but spend no more per basket, and discounts are applied almost equally to both groups. Add a sign-up incentive at checkout to convert the 39.8% non-member share, and reward repeat purchases (points, early access) instead of raising discounts.
-3. **Focus campaigns on the high-revenue, price-driven products.** Feature Blue Polo Shirt, Grey Fashion Jacket and the Men's Shirt segment in promotions and homepage placement, and test pairing Women's Jeans (lowest revenue share) with Women's Jackets to lift their contribution.
+2. **Test shallower discounts.** Basket size is flat across discount bands and members receive the same discount as non-members, so deeper discounts are not visibly paying off. Run a controlled test of lower discount levels and compare basket value and units per order.
+3. **Do not assume membership will lift baskets; measure repeat purchases first.** Members already make up 60% of transactions but spend no more per basket. Before investing in more sign-up incentives for the 39.8% non-member share, capture a customer ID so repeat-purchase rates of members and non-members can be compared. Reward repeat purchases (points, early access) rather than raising discounts.
+4. **Test campaigns on the high-revenue, price-driven products.** Trial promotions and homepage placement for Blue Polo Shirt, Grey Fashion Jacket and the Men's Shirt segment, and test pairing Women's Jeans (lowest revenue share) with Women's Jackets to lift their contribution. Judge results on revenue and margin once cost data is available.
 
 ### Limitations
 - The data covers only three months, so seasonality cannot be assessed.
 - There is no cost or margin data. "Top" and "best-selling" refer to revenue and volume, not profitability.
-
+- There is no customer ID, so purchase frequency and loyalty cannot be measured. "Member" is a per-transaction flag.
+- The discount analysis is observational and does not establish cause and effect.
+  
 ## Analysis & SQL Queries
 
+Queries run on PostgreSQL (schema balanced_tree); results shown as screenshots.
 ### 1. High Level Sales Analysis
 **Q1. What was the total quantity for all products?**
 
