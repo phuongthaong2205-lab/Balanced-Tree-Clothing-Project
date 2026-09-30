@@ -24,8 +24,6 @@ Interactive 3-page Power BI report built on the Fact–Dimension model, with a m
 - **Discounts:** transaction counts and average units per order stay flat across discount levels of 0–24%, so deeper discounts do not appear to lift basket size.
 - **Revenue concentration:** the top 5 products generate about 65% of revenue.
 
-[Download the .pbix file](link-cua-ban) (requires Power BI Desktop on Windows)
-
 ## Data Source & Credit
 Dataset and business questions are from **Case Study #7 – Balanced Tree Clothing Co.**, 
 part of [Danny Ma's 8 Week SQL Challenge](https://8weeksqlchallenge.com/). 
