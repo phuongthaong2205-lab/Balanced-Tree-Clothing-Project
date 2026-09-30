@@ -36,7 +36,7 @@ All SQL queries, the PostgreSQL data model, Power BI dashboard, and insights bel
 - DAX, Power Query
 - Visualization: Power BI - [Power BI Dashboard File](Balanced_Tree.pbix) 
 - SQL Techniques: CTEs, Subqueries, Window Functions, Self-Joins
-  *SQL queries: see Analysis & SQL Queries below*
+ ( *SQL queries: see Analysis & SQL Queries below*)
 ## Database Schema
 ![Database Schema](balanced_tree_erd.png)
 Note: Streamlined the original 4-table schema into a Fact-Dimension model for efficient Power BI integration.
